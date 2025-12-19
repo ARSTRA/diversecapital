@@ -11,6 +11,7 @@ import RealEstatePage from "./pages/RealEstatePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import AdminDashboard from "./pages/admin/Dashboard";
+import AdminProducts from "./pages/admin/Products";
 
 const queryClient = new QueryClient();
 
@@ -41,7 +42,7 @@ const App = () => (
 
           {/* Admin Routes */}
           <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/products" element={<PlaceholderPage title="Admin Products" />} />
+          <Route path="/admin/products" element={<AdminProducts />} />
           <Route path="/admin/orders" element={<PlaceholderPage title="Admin Orders" />} />
           <Route path="/admin/users" element={<PlaceholderPage title="Admin Users" />} />
           <Route path="/admin/messages" element={<PlaceholderPage title="Admin Messages" />} />
