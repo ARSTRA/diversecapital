@@ -63,3 +63,7 @@ export interface AdminDashboardStats {
   totalRevenue: number;
   pendingOrders: number;
 }
+
+export interface DemoResponse {
+  message: string;
+}
