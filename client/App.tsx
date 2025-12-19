@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/Placeholder";
 import CryptoPage from "./pages/CryptoPage";
+import RealEstatePage from "./pages/RealEstatePage";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +25,7 @@ const App = () => (
 
           {/* Investment Routes */}
           <Route path="/investments/crypto" element={<CryptoPage />} />
-          <Route path="/investments/real-estate" element={<PlaceholderPage title="Real Estate Portfolio" />} />
+          <Route path="/investments/real-estate" element={<RealEstatePage />} />
           <Route path="/investments/gold" element={<PlaceholderPage title="Gold Mining Operations" />} />
           <Route path="/investments/agriculture" element={<PlaceholderPage title="Sustainable Agriculture" />} />
           <Route path="/investments/oil-gas" element={<PlaceholderPage title="Oil & Gas Energy" />} />
