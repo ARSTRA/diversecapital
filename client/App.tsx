@@ -17,7 +17,20 @@ import AdminUsers from "./pages/admin/Users";
 import AdminMessages from "./pages/admin/Messages";
 import AdminSettings from "./pages/admin/Settings";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      queryFn: async ({ queryKey }) => {
+        const url = queryKey[0] as string;
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      },
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
