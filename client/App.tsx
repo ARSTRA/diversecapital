@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import PlaceholderPage from "./pages/Placeholder";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,23 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+
+          {/* Investment Routes */}
+          <Route path="/investments/crypto" element={<PlaceholderPage title="Cryptocurrency Mining" />} />
+          <Route path="/investments/real-estate" element={<PlaceholderPage title="Real Estate Portfolio" />} />
+          <Route path="/investments/gold" element={<PlaceholderPage title="Gold Mining Operations" />} />
+          <Route path="/investments/agriculture" element={<PlaceholderPage title="Sustainable Agriculture" />} />
+          <Route path="/investments/oil-gas" element={<PlaceholderPage title="Oil & Gas Energy" />} />
+          <Route path="/investments/financial-services" element={<PlaceholderPage title="Insurance & Loans" />} />
+
+          {/* Core Pages */}
+          <Route path="/about" element={<PlaceholderPage title="About Us" />} />
+          <Route path="/faq" element={<PlaceholderPage title="FAQ / Help Center" />} />
+          <Route path="/contact" element={<PlaceholderPage title="Contact Us" />} />
+          <Route path="/login" element={<PlaceholderPage title="Login" />} />
+          <Route path="/signup" element={<PlaceholderPage title="Sign Up" />} />
+          <Route path="/dashboard" element={<PlaceholderPage title="User Dashboard" />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
