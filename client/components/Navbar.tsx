@@ -4,6 +4,8 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useQuery } from "@tanstack/react-query";
+import { SiteSettings } from "@shared/api";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -29,6 +31,10 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  const { data: settings } = useQuery<SiteSettings>({
+    queryKey: ["/api/settings"],
+  });
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -43,9 +49,16 @@ export const Navbar = () => {
       scrolled ? "bg-white/80 backdrop-blur-md border-border py-2" : "bg-transparent border-transparent py-4"
     )}>
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/">
-          <Logo />
-        </Link>
+        <div className="flex flex-col">
+          <Link to="/">
+            <Logo />
+          </Link>
+          {settings?.headerContent && (
+            <span className="text-[10px] font-bold text-secondary uppercase tracking-widest mt-1 ml-1 hidden lg:block">
+              {settings.headerContent}
+            </span>
+          )}
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
