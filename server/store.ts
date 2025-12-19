@@ -14,12 +14,13 @@ class Store {
       showOnHome: true,
       isFeatured: true,
       minInvestment: 1000,
-      maturityPeriod: "12 Months"
+      maturityPeriod: "12 Months",
     },
     {
       id: "2",
       name: "Canary Wharf Tower",
-      description: "Fractional ownership in a prime London residential development.",
+      description:
+        "Fractional ownership in a prime London residential development.",
       price: 25000,
       category: "Real Estate",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
@@ -28,8 +29,8 @@ class Store {
       showOnHome: true,
       isFeatured: false,
       minInvestment: 5000,
-      maturityPeriod: "24 Months"
-    }
+      maturityPeriod: "24 Months",
+    },
   ];
 
   users: User[] = [
@@ -39,8 +40,8 @@ class Store {
       email: "admin@diverse-capital.com",
       role: "admin",
       joinedAt: new Date().toISOString(),
-      status: "active"
-    }
+      status: "active",
+    },
   ];
 
   orders: Order[] = [
@@ -52,8 +53,8 @@ class Store {
       status: "Profits",
       date: new Date().toISOString(),
       customerName: "Admin User",
-      productName: "Bitcoin Cloud Mining"
-    }
+      productName: "Bitcoin Cloud Mining",
+    },
   ];
 
   messages: Message[] = [
@@ -64,8 +65,8 @@ class Store {
       subject: "Investment Inquiry",
       message: "I am interested in the Real Estate portfolio.",
       date: new Date().toISOString(),
-      isRead: false
-    }
+      isRead: false,
+    },
   ];
 
   settings: SiteSettings = {
@@ -78,7 +79,7 @@ class Store {
     contactAddress: "123 Financial District, London, EC2V 6BT, UK",
     aboutUsContent: "Diverse Capital is a leading investment platform...",
     headerContent: "Empowering Your Financial Future",
-    footerContent: "© 2024 Diverse Capital Group. All rights reserved."
+    footerContent: "© 2024 Diverse Capital Group. All rights reserved.",
   };
 }
 

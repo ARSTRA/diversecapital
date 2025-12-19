@@ -3,7 +3,13 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  category: "Crypto" | "Real Estate" | "Gold" | "Agriculture" | "Oil & Gas" | "Financial Services";
+  category:
+    | "Crypto"
+    | "Real Estate"
+    | "Gold"
+    | "Agriculture"
+    | "Oil & Gas"
+    | "Financial Services";
   image: string;
   roi: string;
   status: "Active" | "Inactive";

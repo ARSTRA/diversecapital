@@ -9,8 +9,8 @@ import { SiteSettings } from "@shared/api";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { 
-    name: "Investments", 
+  {
+    name: "Investments",
     path: "#",
     dropdown: [
       { name: "Crypto Mining", path: "/investments/crypto" },
@@ -19,7 +19,7 @@ const navLinks = [
       { name: "Agriculture", path: "/investments/agriculture" },
       { name: "Oil & Gas", path: "/investments/oil-gas" },
       { name: "Insurance & Loans", path: "/investments/financial-services" },
-    ]
+    ],
   },
   { name: "About", path: "/about" },
   { name: "FAQ", path: "/faq" },
@@ -44,10 +44,14 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-      scrolled ? "bg-white/80 backdrop-blur-md border-border py-2" : "bg-transparent border-transparent py-4"
-    )}>
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
+        scrolled
+          ? "bg-white/80 backdrop-blur-md border-border py-2"
+          : "bg-transparent border-transparent py-4",
+      )}
+    >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex flex-col">
           <Link to="/">
@@ -84,7 +88,9 @@ export const Navbar = () => {
                   to={link.path}
                   className={cn(
                     "text-sm font-medium hover:text-secondary transition-colors",
-                    location.pathname === link.path ? "text-secondary font-semibold" : "text-foreground/80"
+                    location.pathname === link.path
+                      ? "text-secondary font-semibold"
+                      : "text-foreground/80",
                   )}
                 >
                   {link.name}
@@ -94,10 +100,17 @@ export const Navbar = () => {
           ))}
           <div className="flex items-center gap-4 border-l pl-8 border-border">
             <Link to="/login">
-              <Button variant="ghost" size="sm">Log In</Button>
+              <Button variant="ghost" size="sm">
+                Log In
+              </Button>
             </Link>
             <Link to="/signup">
-              <Button size="sm" className="bg-secondary hover:bg-secondary/90 text-white">Get Started</Button>
+              <Button
+                size="sm"
+                className="bg-secondary hover:bg-secondary/90 text-white"
+              >
+                Get Started
+              </Button>
             </Link>
           </div>
         </div>
@@ -109,26 +122,41 @@ export const Navbar = () => {
       </div>
 
       {/* Mobile Nav */}
-      <div className={cn(
-        "md:hidden absolute top-full left-0 right-0 bg-white border-b border-border p-4 transition-all duration-300 origin-top",
-        isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
-      )}>
+      <div
+        className={cn(
+          "md:hidden absolute top-full left-0 right-0 bg-white border-b border-border p-4 transition-all duration-300 origin-top",
+          isOpen
+            ? "scale-y-100 opacity-100"
+            : "scale-y-0 opacity-0 pointer-events-none",
+        )}
+      >
         <div className="flex flex-col gap-4">
           {navLinks.map((link) => (
             <div key={link.name}>
               {link.dropdown ? (
                 <div className="space-y-2">
-                  <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">{link.name}</span>
+                  <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                    {link.name}
+                  </span>
                   <div className="grid grid-cols-1 gap-2 pl-4">
                     {link.dropdown.map((sub) => (
-                      <Link key={sub.name} to={sub.path} className="text-sm py-1 hover:text-secondary" onClick={() => setIsOpen(false)}>
+                      <Link
+                        key={sub.name}
+                        to={sub.path}
+                        className="text-sm py-1 hover:text-secondary"
+                        onClick={() => setIsOpen(false)}
+                      >
                         {sub.name}
                       </Link>
                     ))}
                   </div>
                 </div>
               ) : (
-                <Link to={link.path} className="text-lg font-medium" onClick={() => setIsOpen(false)}>
+                <Link
+                  to={link.path}
+                  className="text-lg font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
                   {link.name}
                 </Link>
               )}
@@ -137,10 +165,14 @@ export const Navbar = () => {
           <hr />
           <div className="flex flex-col gap-3">
             <Link to="/login" onClick={() => setIsOpen(false)}>
-              <Button variant="outline" className="w-full">Log In</Button>
+              <Button variant="outline" className="w-full">
+                Log In
+              </Button>
             </Link>
             <Link to="/signup" onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-secondary hover:bg-secondary/90">Get Started</Button>
+              <Button className="w-full bg-secondary hover:bg-secondary/90">
+                Get Started
+              </Button>
             </Link>
           </div>
         </div>

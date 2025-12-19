@@ -44,18 +44,36 @@ const App = () => (
           {/* Investment Routes */}
           <Route path="/investments/crypto" element={<CryptoPage />} />
           <Route path="/investments/real-estate" element={<RealEstatePage />} />
-          <Route path="/investments/gold" element={<PlaceholderPage title="Gold Mining Operations" />} />
-          <Route path="/investments/agriculture" element={<PlaceholderPage title="Sustainable Agriculture" />} />
-          <Route path="/investments/oil-gas" element={<PlaceholderPage title="Oil & Gas Energy" />} />
-          <Route path="/investments/financial-services" element={<PlaceholderPage title="Insurance & Loans" />} />
+          <Route
+            path="/investments/gold"
+            element={<PlaceholderPage title="Gold Mining Operations" />}
+          />
+          <Route
+            path="/investments/agriculture"
+            element={<PlaceholderPage title="Sustainable Agriculture" />}
+          />
+          <Route
+            path="/investments/oil-gas"
+            element={<PlaceholderPage title="Oil & Gas Energy" />}
+          />
+          <Route
+            path="/investments/financial-services"
+            element={<PlaceholderPage title="Insurance & Loans" />}
+          />
 
           {/* Core Pages */}
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/faq" element={<PlaceholderPage title="FAQ / Help Center" />} />
+          <Route
+            path="/faq"
+            element={<PlaceholderPage title="FAQ / Help Center" />}
+          />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<PlaceholderPage title="Login" />} />
           <Route path="/signup" element={<PlaceholderPage title="Sign Up" />} />
-          <Route path="/dashboard" element={<PlaceholderPage title="User Dashboard" />} />
+          <Route
+            path="/dashboard"
+            element={<PlaceholderPage title="User Dashboard" />}
+          />
 
           {/* Admin Routes */}
           <Route path="/admin" element={<AdminDashboard />} />

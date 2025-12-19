@@ -8,7 +8,7 @@ export const getProducts: RequestHandler = (req, res) => {
 
 export const updateProduct: RequestHandler = (req, res) => {
   const { id } = req.params;
-  const index = store.products.findIndex(p => p.id === id);
+  const index = store.products.findIndex((p) => p.id === id);
   if (index !== -1) {
     store.products[index] = { ...store.products[index], ...req.body };
     res.json(store.products[index]);
@@ -18,14 +18,17 @@ export const updateProduct: RequestHandler = (req, res) => {
 };
 
 export const createProduct: RequestHandler = (req, res) => {
-  const newProduct = { ...req.body, id: Math.random().toString(36).substr(2, 9) };
+  const newProduct = {
+    ...req.body,
+    id: Math.random().toString(36).substr(2, 9),
+  };
   store.products.push(newProduct);
   res.status(201).json(newProduct);
 };
 
 export const deleteProduct: RequestHandler = (req, res) => {
   const { id } = req.params;
-  store.products = store.products.filter(p => p.id !== id);
+  store.products = store.products.filter((p) => p.id !== id);
   res.status(204).send();
 };
 
@@ -36,7 +39,7 @@ export const getOrders: RequestHandler = (req, res) => {
 
 export const updateOrder: RequestHandler = (req, res) => {
   const { id } = req.params;
-  const index = store.orders.findIndex(o => o.id === id);
+  const index = store.orders.findIndex((o) => o.id === id);
   if (index !== -1) {
     store.orders[index] = { ...store.orders[index], ...req.body };
     res.json(store.orders[index]);
@@ -52,7 +55,7 @@ export const getUsers: RequestHandler = (req, res) => {
 
 export const deleteUser: RequestHandler = (req, res) => {
   const { id } = req.params;
-  store.users = store.users.filter(u => u.id !== id);
+  store.users = store.users.filter((u) => u.id !== id);
   res.status(204).send();
 };
 
@@ -73,7 +76,7 @@ export const getMessages: RequestHandler = (req, res) => {
 
 export const updateMessage: RequestHandler = (req, res) => {
   const { id } = req.params;
-  const index = store.messages.findIndex(m => m.id === id);
+  const index = store.messages.findIndex((m) => m.id === id);
   if (index !== -1) {
     store.messages[index] = { ...store.messages[index], ...req.body };
     res.json(store.messages[index]);
