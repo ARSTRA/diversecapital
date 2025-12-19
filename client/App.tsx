@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PlaceholderPage from "./pages/Placeholder";
+import CryptoPage from "./pages/CryptoPage";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
 
           {/* Investment Routes */}
-          <Route path="/investments/crypto" element={<PlaceholderPage title="Cryptocurrency Mining" />} />
+          <Route path="/investments/crypto" element={<CryptoPage />} />
           <Route path="/investments/real-estate" element={<PlaceholderPage title="Real Estate Portfolio" />} />
           <Route path="/investments/gold" element={<PlaceholderPage title="Gold Mining Operations" />} />
           <Route path="/investments/agriculture" element={<PlaceholderPage title="Sustainable Agriculture" />} />
