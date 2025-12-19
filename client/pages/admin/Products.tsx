@@ -325,6 +325,6 @@ export default function AdminProducts() {
           )}
         </div>
       </div>
-    </Layout>
+    </AdminLayout>
   );
 }
