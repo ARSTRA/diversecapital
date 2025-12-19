@@ -12,6 +12,7 @@ import PlaceholderPage from "./pages/Placeholder";
 import CryptoPage from "./pages/CryptoPage";
 import RealEstatePage from "./pages/RealEstatePage";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
 
@@ -35,7 +36,7 @@ const App = () => (
           {/* Core Pages */}
           <Route path="/about" element={<AboutPage />} />
           <Route path="/faq" element={<PlaceholderPage title="FAQ / Help Center" />} />
-          <Route path="/contact" element={<PlaceholderPage title="Contact Us" />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<PlaceholderPage title="Login" />} />
           <Route path="/signup" element={<PlaceholderPage title="Sign Up" />} />
           <Route path="/dashboard" element={<PlaceholderPage title="User Dashboard" />} />
