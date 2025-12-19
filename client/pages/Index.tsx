@@ -1,6 +1,8 @@
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { Product, SiteSettings } from "@shared/api";
 import { 
   ArrowRight, 
   TrendingUp, 
@@ -17,51 +19,6 @@ import {
   Zap
 } from "lucide-react";
 
-const industries = [
-  {
-    title: "Cryptocurrency Mining",
-    description: "State-of-the-art mining facilities powered by renewable energy, delivering consistent hash-rate returns.",
-    icon: <Zap className="w-8 h-8 text-secondary" />,
-    path: "/investments/crypto",
-    image: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Real Estate Portfolio",
-    description: "Fractional ownership in prime residential and commercial developments across global metropolises.",
-    icon: <Building2 className="w-8 h-8 text-secondary" />,
-    path: "/investments/real-estate",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Gold Mining Operations",
-    description: "Direct investment in physical gold assets and mining operations with audited reserves.",
-    icon: <Pickaxe className="w-8 h-8 text-secondary" />,
-    path: "/investments/gold",
-    image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Sustainable Agriculture",
-    description: "Investing in the future of food security through tech-enabled, sustainable farming practices.",
-    icon: <Leaf className="w-8 h-8 text-secondary" />,
-    path: "/investments/agriculture",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Oil & Gas Energy",
-    description: "Strategic partnerships in energy production and distribution infrastructure projects.",
-    icon: <Droplets className="w-8 h-8 text-secondary" />,
-    path: "/investments/oil-gas",
-    image: "https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    title: "Insurance & Loans",
-    description: "Secure financial products providing liquidity and risk management for institutional clients.",
-    icon: <ShieldCheck className="w-8 h-8 text-secondary" />,
-    path: "/investments/financial-services",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
-  },
-];
-
 const stats = [
   { label: "Active Investors", value: "25k+", icon: <Users className="w-5 h-5" /> },
   { label: "Assets Managed", value: "$1.2B+", icon: <BarChart3 className="w-5 h-5" /> },
@@ -69,7 +26,36 @@ const stats = [
   { label: "Growth YoY", value: "24.5%", icon: <TrendingUp className="w-5 h-5" /> },
 ];
 
+const getIcon = (category: string) => {
+  switch (category) {
+    case "Crypto": return <Zap className="w-8 h-8 text-secondary" />;
+    case "Real Estate": return <Building2 className="w-8 h-8 text-secondary" />;
+    case "Gold": return <Pickaxe className="w-8 h-8 text-secondary" />;
+    case "Agriculture": return <Leaf className="w-8 h-8 text-secondary" />;
+    case "Oil & Gas": return <Droplets className="w-8 h-8 text-secondary" />;
+    default: return <ShieldCheck className="w-8 h-8 text-secondary" />;
+  }
+};
+
+const getPath = (category: string) => {
+  switch (category) {
+    case "Crypto": return "/investments/crypto";
+    case "Real Estate": return "/investments/real-estate";
+    default: return "/investments/crypto";
+  }
+};
+
 export default function Index() {
+  const { data: products = [], isLoading: productsLoading } = useQuery<Product[]>({
+    queryKey: ["/api/products"],
+  });
+
+  const { data: settings } = useQuery<SiteSettings>({
+    queryKey: ["/api/settings"],
+  });
+
+  const homeProducts = products.filter(p => p.showOnHome && p.status === "Active");
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -94,9 +80,9 @@ export default function Index() {
                     Start Your Portfolio
                   </Button>
                 </Link>
-                <Link to="/investments/crypto">
-                  <Button size="lg" variant="outline" className="px-8 h-14 text-lg">
-                    Explore Sectors
+                <Link to="/admin">
+                  <Button size="lg" variant="outline" className="px-8 h-14 text-lg border-secondary text-secondary">
+                    Admin Dashboard
                   </Button>
                 </Link>
               </div>
@@ -169,7 +155,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Category Showcase */}
+      {/* Category Showcase - Now Dynamic */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -180,35 +166,47 @@ export default function Index() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry) => (
-              <div key={industry.title} className="bg-white rounded-[32px] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                <div className="h-48 relative overflow-hidden">
-                  <img 
-                    src={industry.image} 
-                    alt={industry.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-6">
-                    <div className="p-3 bg-white/20 backdrop-blur-md rounded-2xl">
-                      {industry.icon}
+            {productsLoading ? (
+              [1, 2, 3].map(i => <div key={i} className="h-64 bg-slate-100 animate-pulse rounded-[32px]" />)
+            ) : homeProducts.length > 0 ? (
+              homeProducts.map((product) => (
+                <div key={product.id} className="bg-white rounded-[32px] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                  <div className="h-48 relative overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-4 left-6">
+                      <div className="p-3 bg-white/20 backdrop-blur-md rounded-2xl">
+                        {getIcon(product.category)}
+                      </div>
                     </div>
                   </div>
+                  <div className="p-8 space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-bold text-secondary uppercase tracking-widest">{product.category}</span>
+                      <span className="text-lg font-bold text-primary">{product.roi} ROI</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary">{product.name}</h3>
+                    <p className="text-muted-foreground leading-relaxed line-clamp-2">
+                      {product.description}
+                    </p>
+                    <Link 
+                      to={getPath(product.category)} 
+                      className="inline-flex items-center gap-2 text-secondary font-bold hover:gap-3 transition-all"
+                    >
+                      View Details <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
-                <div className="p-8 space-y-4">
-                  <h3 className="text-2xl font-bold text-primary">{industry.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {industry.description}
-                  </p>
-                  <Link 
-                    to={industry.path} 
-                    className="inline-flex items-center gap-2 text-secondary font-bold hover:gap-3 transition-all"
-                  >
-                    View Details <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-20 bg-white rounded-[32px] border border-dashed border-slate-200">
+                <p className="text-muted-foreground">No featured investments available at the moment.</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>

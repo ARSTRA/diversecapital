@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import { Logo } from "./Logo";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { SiteSettings } from "@shared/api";
 
 export const Footer = () => {
+  const { data: settings } = useQuery<SiteSettings>({
+    queryKey: ["/api/settings"],
+  });
+
   return (
     <footer className="bg-primary text-white pt-20 pb-10">
       <div className="container mx-auto px-4">
@@ -10,7 +16,7 @@ export const Footer = () => {
           <div className="space-y-6">
             <Logo className="invert brightness-0" />
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
-              Empowering global investors with diversified opportunities across high-growth industries. Regulated, transparent, and built for your future.
+              {settings?.aboutUsContent || "Empowering global investors with diversified opportunities across high-growth industries. Regulated, transparent, and built for your future."}
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-secondary transition-colors">
@@ -57,15 +63,15 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent shrink-0" />
-                <span>123 Financial District, London, EC2V 6BT, UK</span>
+                <span>{settings?.contactAddress || "123 Financial District, London, EC2V 6BT, UK"}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
-                <span>+44 (20) 1234 5678</span>
+                <span>{settings?.contactPhone || "+44 (20) 1234 5678"}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent shrink-0" />
-                <span>support@diverse-capital.com</span>
+                <span>{settings?.contactEmail || "support@diverse-capital.com"}</span>
               </li>
             </ul>
           </div>
@@ -75,7 +81,7 @@ export const Footer = () => {
           <p className="mb-4">
             DISCLAIMER: Investment in financial markets involves risk. Cryptocurrency, commodities, and real estate are volatile assets. Past performance is not indicative of future results. Please read our full Risk Disclosure before investing.
           </p>
-          <p>© {new Date().getFullYear()} Diverse Capital Investment Group. All rights reserved.</p>
+          <p>{settings?.footerContent || `© ${new Date().getFullYear()} Diverse Capital Investment Group. All rights reserved.`}</p>
         </div>
       </div>
     </footer>
