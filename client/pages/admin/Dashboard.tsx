@@ -21,6 +21,8 @@ import {
   AreaChart,
   Area
 } from "recharts";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const data = [
   { name: "Mon", revenue: 4000, users: 2400 },
