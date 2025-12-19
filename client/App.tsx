@@ -10,6 +10,7 @@ import CryptoPage from "./pages/CryptoPage";
 import RealEstatePage from "./pages/RealEstatePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import AdminDashboard from "./pages/admin/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,14 @@ const App = () => (
           <Route path="/login" element={<PlaceholderPage title="Login" />} />
           <Route path="/signup" element={<PlaceholderPage title="Sign Up" />} />
           <Route path="/dashboard" element={<PlaceholderPage title="User Dashboard" />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/products" element={<PlaceholderPage title="Admin Products" />} />
+          <Route path="/admin/orders" element={<PlaceholderPage title="Admin Orders" />} />
+          <Route path="/admin/users" element={<PlaceholderPage title="Admin Users" />} />
+          <Route path="/admin/messages" element={<PlaceholderPage title="Admin Messages" />} />
+          <Route path="/admin/settings" element={<PlaceholderPage title="Admin Settings" />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
