@@ -8,11 +8,12 @@ import {
   Trash2, 
   Mail, 
   Calendar, 
-  ShieldCheck, 
+  ShieldCheck,
   XCircle,
   Eye,
   MoreVertical,
-  History
+  History,
+  TrendingUp
 } from "lucide-react";
 import { User, Order } from "@shared/api";
 import { toast } from "sonner";
