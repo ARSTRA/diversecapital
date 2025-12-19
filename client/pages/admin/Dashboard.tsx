@@ -174,6 +174,3 @@ export default function AdminDashboard() {
     </AdminLayout>
   );
 }
-
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
