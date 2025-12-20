@@ -46,17 +46,20 @@ const opportunities = [
 const features = [
   {
     title: "Sustainable Practices",
-    description: "Modern farming techniques that maximize yield and minimize environmental impact",
+    description:
+      "Modern farming techniques that maximize yield and minimize environmental impact",
     icon: <Leaf className="w-6 h-6" />,
   },
   {
     title: "Year-Round Returns",
-    description: "Diversified crops and seasonal operations provide consistent cash flow",
+    description:
+      "Diversified crops and seasonal operations provide consistent cash flow",
     icon: <TrendingUp className="w-6 h-6" />,
   },
   {
     title: "Commodity Hedge",
-    description: "Agricultural assets provide protection against inflation and market volatility",
+    description:
+      "Agricultural assets provide protection against inflation and market volatility",
     icon: <Sprout className="w-6 h-6" />,
   },
   {
@@ -117,13 +120,14 @@ export default function AgriculturePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl font-bold text-primary leading-tight">
-                The Future of <span className="text-secondary">Food & Farming</span>
+                The Future of{" "}
+                <span className="text-secondary">Food & Farming</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 With global population growth and changing climate patterns,
-                agricultural investments provide both social impact and financial
-                returns. Our portfolio focuses on sustainable, high-yield
-                operations managed by agricultural experts.
+                agricultural investments provide both social impact and
+                financial returns. Our portfolio focuses on sustainable,
+                high-yield operations managed by agricultural experts.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -177,11 +181,13 @@ export default function AgriculturePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">
-              Agricultural Investment <span className="text-secondary">Opportunities</span>
+              Agricultural Investment{" "}
+              <span className="text-secondary">Opportunities</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Diversified agricultural projects across regions, crops, and
-              farming practices selected for growth potential and sustainability.
+              farming practices selected for growth potential and
+              sustainability.
             </p>
           </div>
 
@@ -206,7 +212,9 @@ export default function AgriculturePage() {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-2 text-secondary mb-2">
                     <Sprout className="w-4 h-4" />
-                    <span className="text-sm font-semibold">{opp.location}</span>
+                    <span className="text-sm font-semibold">
+                      {opp.location}
+                    </span>
                   </div>
                   <h3 className="text-2xl font-bold text-primary mb-6">
                     {opp.name}
@@ -275,7 +283,10 @@ export default function AgriculturePage() {
                   "Climate-resilient crop selection and techniques",
                   "Carbon-neutral operations through offset programs",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-4 text-white">
+                  <div
+                    key={item}
+                    className="flex items-center gap-4 text-white"
+                  >
                     <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
@@ -307,7 +318,10 @@ export default function AgriculturePage() {
               generations.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-10">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-white px-10"
+              >
                 Start Investing
               </Button>
               <Button

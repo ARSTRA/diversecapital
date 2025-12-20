@@ -339,7 +339,8 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">
-              Quick Answers to Common <span className="text-secondary">Questions</span>
+              Quick Answers to Common{" "}
+              <span className="text-secondary">Questions</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Check out our FAQ section for answers to frequently asked
@@ -399,7 +400,10 @@ export default function ContactPage() {
                 future.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-10">
+                <Button
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-white px-10"
+                >
                   Get Started
                 </Button>
                 <Button

@@ -144,22 +144,19 @@ const advisors = [
     name: "Sarah Mitchell",
     role: "Lead Investment Advisor",
     bio: "15+ years in wealth management and institutional investments",
-    image:
-      "https://images.pexels.com/photos/7736038/pexels-photo-7736038.jpeg",
+    image: "https://images.pexels.com/photos/7736038/pexels-photo-7736038.jpeg",
   },
   {
     name: "Michael Chen",
     role: "Customer Support Specialist",
     bio: "Expert in client relations and portfolio optimization",
-    image:
-      "https://images.pexels.com/photos/7681362/pexels-photo-7681362.jpeg",
+    image: "https://images.pexels.com/photos/7681362/pexels-photo-7681362.jpeg",
   },
   {
     name: "Emma Johnson",
     role: "Compliance Officer",
     bio: "Ensuring regulatory excellence and investor protection",
-    image:
-      "https://images.pexels.com/photos/7681362/pexels-photo-7681362.jpeg",
+    image: "https://images.pexels.com/photos/7681362/pexels-photo-7681362.jpeg",
   },
 ];
 
@@ -235,7 +232,10 @@ export default function FaqPage() {
                         className="w-full space-y-2"
                       >
                         {category.questions.map((item, idx) => (
-                          <AccordionItem key={idx} value={`${category.id}-${idx}`}>
+                          <AccordionItem
+                            key={idx}
+                            value={`${category.id}-${idx}`}
+                          >
                             <AccordionTrigger className="text-lg font-bold text-primary hover:text-secondary transition-colors py-4">
                               {item.q}
                             </AccordionTrigger>
@@ -280,7 +280,9 @@ export default function FaqPage() {
               <Card className="border-none shadow-sm rounded-[32px] overflow-hidden bg-primary text-white">
                 <CardContent className="p-8 space-y-6">
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Still need help?</h3>
+                    <h3 className="text-2xl font-bold mb-2">
+                      Still need help?
+                    </h3>
                     <p className="text-white/80 text-sm">
                       Our support team is ready to assist you.
                     </p>
@@ -392,7 +394,10 @@ export default function FaqPage() {
                 and achieve your financial goals.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-10">
+                <Button
+                  size="lg"
+                  className="bg-secondary hover:bg-secondary/90 text-white px-10"
+                >
                   Get Started Now
                 </Button>
                 <Button

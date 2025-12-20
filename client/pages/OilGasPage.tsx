@@ -46,12 +46,14 @@ const opportunities = [
 const features = [
   {
     title: "High Yield Returns",
-    description: "Energy sector investments provide strong cash flow and capital appreciation",
+    description:
+      "Energy sector investments provide strong cash flow and capital appreciation",
     icon: <TrendingUp className="w-6 h-6" />,
   },
   {
     title: "Essential Commodities",
-    description: "Global demand for energy ensures stable long-term revenue streams",
+    description:
+      "Global demand for energy ensures stable long-term revenue streams",
     icon: <Zap className="w-6 h-6" />,
   },
   {
@@ -117,7 +119,8 @@ export default function OilGasPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl font-bold text-primary leading-tight">
-                Strategic Energy <span className="text-secondary">Investments</span>
+                Strategic Energy{" "}
+                <span className="text-secondary">Investments</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Oil and natural gas remain critical global commodities with
@@ -207,7 +210,9 @@ export default function OilGasPage() {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-2 text-secondary mb-2">
                     <Flame className="w-4 h-4" />
-                    <span className="text-sm font-semibold">{opp.location}</span>
+                    <span className="text-sm font-semibold">
+                      {opp.location}
+                    </span>
                   </div>
                   <h3 className="text-2xl font-bold text-primary mb-6">
                     {opp.name}
@@ -275,7 +280,10 @@ export default function OilGasPage() {
                   "Environmental mitigation and carbon management programs",
                   "Comprehensive safety training and incident prevention",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-4 text-white">
+                  <div
+                    key={item}
+                    className="flex items-center gap-4 text-white"
+                  >
                     <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
@@ -307,7 +315,10 @@ export default function OilGasPage() {
               commodity markets.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-10">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-white px-10"
+              >
                 Start Investing
               </Button>
               <Button

@@ -4,7 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Link } from "react-router-dom";
-import { Mail, Lock, User, ArrowRight, CheckCircle2, Eye, EyeOff } from "lucide-react";
+import {
+  Mail,
+  Lock,
+  User,
+  ArrowRight,
+  CheckCircle2,
+  Eye,
+  EyeOff,
+} from "lucide-react";
 import { toast } from "sonner";
 
 export default function SignupPage() {
@@ -62,7 +70,9 @@ export default function SignupPage() {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      toast.success("Account created successfully! Welcome to Diverse Capital.");
+      toast.success(
+        "Account created successfully! Welcome to Diverse Capital.",
+      );
       console.log("Signup data:", formData);
 
       // Reset form
@@ -196,7 +206,9 @@ export default function SignupPage() {
                     />
                     <button
                       type="button"
-                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      onClick={() =>
+                        setShowConfirmPassword(!showConfirmPassword)
+                      }
                       className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors"
                     >
                       {showConfirmPassword ? (
@@ -219,11 +231,17 @@ export default function SignupPage() {
                   />
                   <label className="text-xs text-muted-foreground cursor-pointer">
                     I agree to the{" "}
-                    <a href="#" className="text-primary font-bold hover:underline">
+                    <a
+                      href="#"
+                      className="text-primary font-bold hover:underline"
+                    >
                       Terms of Service
                     </a>{" "}
                     and{" "}
-                    <a href="#" className="text-primary font-bold hover:underline">
+                    <a
+                      href="#"
+                      className="text-primary font-bold hover:underline"
+                    >
                       Privacy Policy
                     </a>
                   </label>
@@ -251,7 +269,9 @@ export default function SignupPage() {
               {/* Divider */}
               <div className="flex items-center gap-3 my-6">
                 <div className="flex-grow h-px bg-slate-200"></div>
-                <span className="text-xs text-muted-foreground font-medium">OR</span>
+                <span className="text-xs text-muted-foreground font-medium">
+                  OR
+                </span>
                 <div className="flex-grow h-px bg-slate-200"></div>
               </div>
 

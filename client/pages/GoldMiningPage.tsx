@@ -89,8 +89,8 @@ export default function GoldMiningPage() {
             </h1>
             <p className="text-xl text-white/70 leading-relaxed">
               Access world-class gold mining operations with proven reserves and
-              operational excellence. From exploration to extraction, secure your
-              wealth in tangible precious metal assets managed by industry
+              operational excellence. From exploration to extraction, secure
+              your wealth in tangible precious metal assets managed by industry
               experts.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
@@ -118,7 +118,8 @@ export default function GoldMiningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl font-bold text-primary leading-tight">
-                Why Gold Mining <span className="text-secondary">Investments?</span>
+                Why Gold Mining{" "}
+                <span className="text-secondary">Investments?</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Gold has been a store of value for millennia. Unlike other
@@ -178,7 +179,8 @@ export default function GoldMiningPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">
-              Current Investment <span className="text-secondary">Opportunities</span>
+              Current Investment{" "}
+              <span className="text-secondary">Opportunities</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Hand-selected gold mining projects across the globe with verified
@@ -207,7 +209,9 @@ export default function GoldMiningPage() {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-2 text-secondary mb-2">
                     <Gem className="w-4 h-4" />
-                    <span className="text-sm font-semibold">{opp.location}</span>
+                    <span className="text-sm font-semibold">
+                      {opp.location}
+                    </span>
                   </div>
                   <h3 className="text-2xl font-bold text-primary mb-6">
                     {opp.name}
@@ -275,7 +279,10 @@ export default function GoldMiningPage() {
                   "Environmental and social responsibility evaluation",
                   "Monthly reporting and transparent asset tracking",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-4 text-white">
+                  <div
+                    key={item}
+                    className="flex items-center gap-4 text-white"
+                  >
                     <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
@@ -307,7 +314,10 @@ export default function GoldMiningPage() {
               worldwide.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-10">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-white px-10"
+              >
                 Start Investing
               </Button>
               <Button

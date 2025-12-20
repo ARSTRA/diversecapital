@@ -20,8 +20,7 @@ const opportunities = [
     returns: "10.5% p.a.",
     status: "Active",
     minInvestment: "$5,000",
-    image:
-      "https://images.pexels.com/photos/7821935/pexels-photo-7821935.jpeg",
+    image: "https://images.pexels.com/photos/7821935/pexels-photo-7821935.jpeg",
   },
   {
     name: "Corporate Loan Portfolio",
@@ -29,8 +28,7 @@ const opportunities = [
     returns: "9.8% p.a.",
     status: "Active",
     minInvestment: "$3,000",
-    image:
-      "https://images.pexels.com/photos/7821935/pexels-photo-7821935.jpeg",
+    image: "https://images.pexels.com/photos/7821935/pexels-photo-7821935.jpeg",
   },
   {
     name: "Alternative Finance Fund",
@@ -38,25 +36,27 @@ const opportunities = [
     returns: "11.2% p.a.",
     status: "Fully Funded",
     minInvestment: "$7,500",
-    image:
-      "https://images.pexels.com/photos/7821935/pexels-photo-7821935.jpeg",
+    image: "https://images.pexels.com/photos/7821935/pexels-photo-7821935.jpeg",
   },
 ];
 
 const features = [
   {
     title: "Consistent Returns",
-    description: "Stable cash flows from interest payments and insurance underwriting",
+    description:
+      "Stable cash flows from interest payments and insurance underwriting",
     icon: <TrendingUp className="w-6 h-6" />,
   },
   {
     title: "Diversified Exposure",
-    description: "Multiple asset classes and risk profiles within financial services",
+    description:
+      "Multiple asset classes and risk profiles within financial services",
     icon: <BarChart3 className="w-6 h-6" />,
   },
   {
     title: "Expert Management",
-    description: "Professional underwriters and portfolio managers with decades of experience",
+    description:
+      "Professional underwriters and portfolio managers with decades of experience",
     icon: <Briefcase className="w-6 h-6" />,
   },
   {
@@ -117,7 +117,8 @@ export default function FinancialServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl font-bold text-primary leading-tight">
-                Financial Services <span className="text-secondary">Excellence</span>
+                Financial Services{" "}
+                <span className="text-secondary">Excellence</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Insurance and lending represent some of the most stable and
@@ -177,7 +178,8 @@ export default function FinancialServicesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-primary mb-4">
-              Financial Services <span className="text-secondary">Opportunities</span>
+              Financial Services{" "}
+              <span className="text-secondary">Opportunities</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Diversified financial services investments managed by experienced
@@ -207,7 +209,9 @@ export default function FinancialServicesPage() {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-2 text-secondary mb-2">
                     <DollarSign className="w-4 h-4" />
-                    <span className="text-sm font-semibold">{opp.location}</span>
+                    <span className="text-sm font-semibold">
+                      {opp.location}
+                    </span>
                   </div>
                   <h3 className="text-2xl font-bold text-primary mb-6">
                     {opp.name}
@@ -263,9 +267,9 @@ export default function FinancialServicesPage() {
                 Professional Risk Management
               </h2>
               <p className="text-lg text-white/70 mb-8">
-                Every investment undergoes rigorous credit analysis, underwriting
-                review, and ongoing monitoring by our team of experienced
-                financial professionals.
+                Every investment undergoes rigorous credit analysis,
+                underwriting review, and ongoing monitoring by our team of
+                experienced financial professionals.
               </p>
               <div className="space-y-6">
                 {[
@@ -275,7 +279,10 @@ export default function FinancialServicesPage() {
                   "Transparent reporting and monthly statements",
                   "Insurance and guarantees where applicable",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-4 text-white">
+                  <div
+                    key={item}
+                    className="flex items-center gap-4 text-white"
+                  >
                     <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
@@ -306,7 +313,10 @@ export default function FinancialServicesPage() {
               returns through professional financial services management.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white px-10">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-white px-10"
+              >
                 Start Investing
               </Button>
               <Button
