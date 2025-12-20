@@ -25,7 +25,7 @@ const faqCategories = [
   {
     id: "getting-started",
     title: "Getting Started",
-    icon: <Zap className="w-6 h-6" />,
+    iconComponent: Zap,
     questions: [
       {
         q: "How do I create an account with Diverse Capital?",
@@ -48,7 +48,7 @@ const faqCategories = [
   {
     id: "investments",
     title: "Investment Questions",
-    icon: <TrendingUp className="w-6 h-6" />,
+    iconComponent: TrendingUp,
     questions: [
       {
         q: "How do I choose which investments to make?",
@@ -71,7 +71,7 @@ const faqCategories = [
   {
     id: "security",
     title: "Security & Compliance",
-    icon: <Shield className="w-6 h-6" />,
+    iconComponent: Shield,
     questions: [
       {
         q: "How is my money protected?",
@@ -94,7 +94,7 @@ const faqCategories = [
   {
     id: "account",
     title: "Account Management",
-    icon: <Users className="w-6 h-6" />,
+    iconComponent: Users,
     questions: [
       {
         q: "How do I update my profile information?",
@@ -117,7 +117,7 @@ const faqCategories = [
   {
     id: "support",
     title: "Support & Assistance",
-    icon: <Clock className="w-6 h-6" />,
+    iconComponent: Clock,
     questions: [
       {
         q: "What are your customer support hours?",
