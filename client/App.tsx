@@ -10,6 +10,7 @@ import CryptoPage from "./pages/CryptoPage";
 import RealEstatePage from "./pages/RealEstatePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import FaqPage from "./pages/FaqPage";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/Products";
 import AdminOrders from "./pages/admin/Orders";
@@ -63,10 +64,7 @@ const App = () => (
 
           {/* Core Pages */}
           <Route path="/about" element={<AboutPage />} />
-          <Route
-            path="/faq"
-            element={<PlaceholderPage title="FAQ / Help Center" />}
-          />
+          <Route path="/faq" element={<FaqPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<PlaceholderPage title="Login" />} />
           <Route path="/signup" element={<PlaceholderPage title="Sign Up" />} />
