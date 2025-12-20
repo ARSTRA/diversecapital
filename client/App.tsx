@@ -11,6 +11,10 @@ import RealEstatePage from "./pages/RealEstatePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import FaqPage from "./pages/FaqPage";
+import GoldMiningPage from "./pages/GoldMiningPage";
+import AgriculturePage from "./pages/AgriculturePage";
+import OilGasPage from "./pages/OilGasPage";
+import FinancialServicesPage from "./pages/FinancialServicesPage";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/Products";
 import AdminOrders from "./pages/admin/Orders";
@@ -45,21 +49,12 @@ const App = () => (
           {/* Investment Routes */}
           <Route path="/investments/crypto" element={<CryptoPage />} />
           <Route path="/investments/real-estate" element={<RealEstatePage />} />
-          <Route
-            path="/investments/gold"
-            element={<PlaceholderPage title="Gold Mining Operations" />}
-          />
-          <Route
-            path="/investments/agriculture"
-            element={<PlaceholderPage title="Sustainable Agriculture" />}
-          />
-          <Route
-            path="/investments/oil-gas"
-            element={<PlaceholderPage title="Oil & Gas Energy" />}
-          />
+          <Route path="/investments/gold" element={<GoldMiningPage />} />
+          <Route path="/investments/agriculture" element={<AgriculturePage />} />
+          <Route path="/investments/oil-gas" element={<OilGasPage />} />
           <Route
             path="/investments/financial-services"
-            element={<PlaceholderPage title="Insurance & Loans" />}
+            element={<FinancialServicesPage />}
           />
 
           {/* Core Pages */}
