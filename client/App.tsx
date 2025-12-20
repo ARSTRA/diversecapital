@@ -61,8 +61,8 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/login" element={<PlaceholderPage title="Login" />} />
-          <Route path="/signup" element={<PlaceholderPage title="Sign Up" />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route
             path="/dashboard"
             element={<PlaceholderPage title="User Dashboard" />}
