@@ -220,7 +220,7 @@ export default function FaqPage() {
                 <div key={category.id}>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-secondary/10 text-secondary rounded-2xl flex items-center justify-center">
-                      {category.icon}
+                      <category.iconComponent className="w-6 h-6" />
                     </div>
                     <h2 className="text-3xl font-bold text-primary">
                       {category.title}
